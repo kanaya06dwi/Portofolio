@@ -1,0 +1,341 @@
+/* 1. Pengaturan Dasar (Reset & Font) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Warna background gelap modern */
+    color: #f8fafc;            /* Warna teks utama (putih gading) */
+    line-height: 1.6;
+}
+
+/* 2. Hiasan Header / Navigasi Atas */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ec4899; /* Warna biru muda terang */
+}
+
+/* Styling Menu Navigasi */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Memberi jarak antar menu */
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Garis Animasi di Bawah Teks saat Hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ec4899; /* Warna aksen kamu */
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav a:hover::after {
+    width: 100%; /* Garis memanjang halus dari kiri ke kanan */
+}
+
+/* Khusus Tombol Kontak (Bikin Berbentuk Tombol Keren) */
+nav a[href="#contact"] {
+    background-color: rgba(236, 72, 153, 0.15);
+    color: #ec4899;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    transition: all 0.3s ease;
+}
+
+nav a[href="#contact"]::after {
+    display: none; /* Menghilangkan garis bawah khusus tombol kontak */
+}
+
+nav a[href="#contact"]:hover {
+    background-color: #ec4899;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+}
+
+/* 3. Hiasan Hero Section (Perkenalan) */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.greeting {
+    color: #ec4899;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.hero-text h1 span {
+    color: #ec4899 /* Mewarnai nama Kanaya jadi biru */
+}
+
+.hero-text h2 {
+    font-size: 22px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.description {
+    max-width: 600px;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* 4. Hiasan Tombol (Buttons) */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background-color: #ec4899;
+    color: #0f172a;
+}
+
+.primary-btn:hover {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+.secondary-btn {
+    border: 2px solid #ec4899;
+    color: #ec4899;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+/* 5. Hiasan Skills & Tools Section */
+.skills {
+    padding: 60px 8%;
+    background-color: #0f172a;
+}
+
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #ec4899; /* Ganti warna ini kalau kamu pakai warna tema lain */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Efek ngambang pas di-hover */
+    border-color: #ec4899;       /* Efek garis pinggir menyala */
+}
+
+.skill-card h3 {
+    color: #f8fafc;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ec4899;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card ul li {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-card ul li::before {
+    content: "▹";
+    color: #ec4899;
+    margin-right: 10px;
+    font-weight: bold;
+}
+/* 6. Hiasan Projects Section */
+.projects {
+    padding: 60px 8%;
+    background-color: #0f172a;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #ec4899;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-category {
+    font-size: 13px;
+    color: #ec4899;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    color: #f8fafc;
+    margin: 8px 0 12px 0;
+}
+
+.project-info p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background-color: #334155;
+    color: #94a3b8;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.project-link {
+    color: #ec4899;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+/* 7. Hiasan Contact & Footer Section */
+.contact {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #0f172a;
+}
+
+.contact-desc {
+    max-width: 550px;
+    margin: -20px auto 30px auto;
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 8%;
+    background-color: #0b1120;
+    color: #64748b;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+}
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-7px);
+    border-color: #ec4899;
+    box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3); /* Efek bayangan berpendar */
+}
+header {
+    background-color: rgba(30, 41, 59, 0.85); /* Transparan */
+    backdrop-filter: blur(10px);               /* Efek blur kaca */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+html {
+    scroll-behavior: smooth;
+}
+.hero-text h1 span {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
